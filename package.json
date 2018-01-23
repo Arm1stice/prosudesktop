@@ -1,7 +1,7 @@
 {
   "name": "prosudesktop",
   "productName": "prosudesktop",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -19,26 +19,29 @@
       "make_targets": {
         "win32": [
           "squirrel"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "yarn"
+        "packageManager": "npm",
+        "quiet": true,
+        "protocol": "prosu://",
+        "appCopyright": "Copyright (c) 2018 Wyatt Calandro",
+        "asar": true,
+        "executableName": "Prosu"
       },
       "electronWinstallerConfig": {
-        "name": "prosudesktop"
+        "name": "prosudesktop",
+        "exe": "Prosu",
+        "description": "A program that allows you to backup your osu! beatmaps",
+        "title": "Prosu Desktop",
+        "setupExe": "Prosu Setup",
+        "releases": "https://update.prosu.xyz"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "Arm1stice",
+        "name": "prosudesktop"
       },
       "windowsStoreConfig": {
         "packageName": "",
