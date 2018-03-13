@@ -27,42 +27,39 @@
         "protocol": "prosu://",
         "appCopyright": "Copyright (c) 2018 Wyatt Calandro",
         "asar": true,
-        "executableName": "Prosu"
+        "executableName": "Prosu Desktop"
       },
       "electronWinstallerConfig": {
         "name": "prosudesktop",
-        "exe": "Prosu",
+        "exe": "Prosu Desktop",
         "description": "A program that allows you to backup your osu! beatmaps",
         "title": "Prosu Desktop",
         "setupExe": "Prosu Setup",
-        "releases": "https://update.prosu.xyz"
+        "releases": "https://hazel-server-yqvikiwuzt.now.sh"
       },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "Arm1stice",
-        "name": "prosudesktop"
-      },
-      "windowsStoreConfig": {
-        "packageName": "",
         "name": "prosudesktop"
       }
     }
   },
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "electron-compile": "^6.4.2",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "electron-forge": "^4.2.0",
+    "electron-forge": "^4.3.0",
     "electron-prebuilt-compile": "1.8.2-beta.3",
     "eslint": "^3",
     "eslint-config-airbnb": "^15",
-    "eslint-plugin-import": "^2",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^5",
-    "eslint-plugin-react": "^7"
+    "eslint-plugin-react": "^7.7.0"
   }
 }
