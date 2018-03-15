@@ -15,39 +15,14 @@
   "author": "wyattcalandro",
   "license": "MIT",
   "config": {
-    "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": "npm",
-        "quiet": true,
-        "protocol": "prosu://",
-        "appCopyright": "Copyright (c) 2018 Wyatt Calandro",
-        "asar": true,
-        "executableName": "Prosu Desktop"
-      },
-      "electronWinstallerConfig": {
-        "name": "prosudesktop",
-        "exe": "Prosu Desktop",
-        "description": "A program that allows you to backup your osu! beatmaps",
-        "title": "Prosu Desktop",
-        "setupExe": "Prosu Setup",
-        "releases": "https://hazel-server-yqvikiwuzt.now.sh"
-      },
-      "github_repository": {
-        "owner": "Arm1stice",
-        "name": "prosudesktop"
-      }
-    }
+    "forge": "./forge-config.js"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "dotenv": "^5.0.1",
     "electron-compile": "^6.4.2",
+    "electron-is-dev": "^0.3.0",
     "electron-squirrel-startup": "^1.0.0",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
