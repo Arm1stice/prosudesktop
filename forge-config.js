@@ -1,4 +1,5 @@
 require('dotenv').config()
+let path = require('path')
 module.exports = {
   make_targets: {
     win32: [
@@ -7,21 +8,21 @@ module.exports = {
   },
   electronPackagerConfig: {
     packageManager: "npm",
-    quiet: true,
     protocol: "prosu://",
     appCopyright: "Copyright (c) 2018 Wyatt Calandro",
-    asar: true,
+    asar: false,
+    name: (Boolean(process.env.BETA)) ? "ProsuBeta" : "Prosu",
     executableName: (Boolean(process.env.BETA)) ? "Prosu Beta" : "Prosu",
-    icon: "./icons/desktop_icon.ico"
+    icon: path.join(__dirname, "icons/desktop_icon.ico")
   },
   electronWinstallerConfig: {
-    "name": "prosudesktop",
-    "exe": (Boolean(process.env.BETA)) ? "Prosu Beta" : "Prosu",
+    "exe": (Boolean(process.env.BETA)) ? "Prosu Beta.exe" : "Prosu.exe",
     "description": "A program that allows you to backup your osu! beatmaps",
-    "title": (Boolean(process.env.BETA)) ? "Prosu Beta" : "Prosu",
-    "setupExe": (Boolean(process.env.BETA)) ? "Prosu Beta Setup" : "Prosu Setup",
+    "title": (Boolean(process.env.BETA)) ? "ProsuBeta" : "Prosu",
+    "setupExe": (Boolean(process.env.BETA)) ? "Prosu Beta Setup.exe" : "Prosu Setup.exe",
     "releases": (Boolean(process.env.BETA)) ? "https://prosu-desktop-beta.now.sh" : "https://prosu-desktop-releases.now.sh",
-    "setupIcon": "./icons/desktop_icon.ico",
+    "loadingGif": path.join(__dirname, "icons/Installing-Animation.gif"),
+    "setupIcon": path.join(__dirname, "icons/desktop_icon.ico"),
     "certificateFile": "./CodeSigning.pfx"
   },
   github_repository: {
