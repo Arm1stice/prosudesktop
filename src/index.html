@@ -18,17 +18,18 @@
 
     .title {
       font-size: 60px;
+      margin-bottom: -10px;
     }
 
-    .copyright {
-      font-size: 15px;
+    .version, .copyright{
+      font-size: 12px;
+      padding-left: 5px;
     }
-
     .status {
       text-align: center;
       font-size: 12px;
       position: absolute;
-      bottom: 40px;
+      bottom: 10px;
       left: 20px;
     }
   </style>
@@ -36,10 +37,12 @@
 </head>
 
 <body>
-  <span class='title'>Prosu</span>
+  <div class='title'>Prosu</div>
+  <span class='version'>Version: <script>document.write(require('electron').remote.app.getVersion())</script></span>
   <br>
   <span class='copyright'>Copyright &copy; 2018 Wyatt Calandro</span>
-  <br><br><br>
+  <br><br>
+  <br><br>
   <span class='status'>&nbsp;</span>
   <script>
     window.$ = window.jQuery = require('jquery');
