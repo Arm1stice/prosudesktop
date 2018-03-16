@@ -1,7 +1,7 @@
 {
   "name": "prosudesktop",
   "productName": "prosudesktop",
-  "version": "0.0.1-b1",
+  "version": "0.0.1-b2",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
