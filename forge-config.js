@@ -24,7 +24,7 @@ module.exports = {
     "loadingGif": path.join(__dirname, "icons/Installing-Animation.gif"),
     "setupIcon": path.join(__dirname, "icons/desktop_icon.ico"),
     "certificateFile": "./CodeSigning.pfx",
-    "certificarePassword": process.env.ELECTRON_FORGE_ELECTRON_WINSTALLER_CONFIG_CERTIFICATE_PASSWORD
+    "certificatePassword": process.env.ELECTRON_FORGE_ELECTRON_WINSTALLER_CONFIG_CERTIFICATE_PASSWORD
   },
   github_repository: {
     "owner": "Arm1stice",
