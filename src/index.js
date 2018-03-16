@@ -54,6 +54,7 @@ const loadingWindow = () => {
       updater.on('error', () => {
         loadingWin.webContents.executeJavaScript(`$(".status").text("An error occurred checking for updates")`)
       })
+      updater.checkForUpdates()
     }
   })
   // Emitted when the window is closed.

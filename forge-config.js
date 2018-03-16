@@ -7,7 +7,7 @@ module.exports = {
     ]
   },
   electronPackagerConfig: {
-    packageManager: "npm",
+    packageManager: "yarn",
     protocol: "prosu://",
     appCopyright: "Copyright (c) 2018 Wyatt Calandro",
     asar: false,
@@ -17,7 +17,7 @@ module.exports = {
   },
   electronWinstallerConfig: {
     "exe": (Boolean(process.env.BETA)) ? "Prosu Beta.exe" : "Prosu.exe",
-    "description": "A program that allows you to backup your osu! beatmaps",
+    "description": "Backup your osu! beatmaps",
     "title": (Boolean(process.env.BETA)) ? "ProsuBeta" : "Prosu",
     "setupExe": (Boolean(process.env.BETA)) ? "Prosu_Beta_Setup.exe" : "Prosu_Setup.exe",
     "releases": (Boolean(process.env.BETA)) ? "https://prosu-desktop-beta.now.sh" : "https://prosu-desktop-releases.now.sh",
