@@ -19,7 +19,7 @@ module.exports = {
     "exe": (Boolean(process.env.BETA)) ? "Prosu Beta.exe" : "Prosu.exe",
     "description": "A program that allows you to backup your osu! beatmaps",
     "title": (Boolean(process.env.BETA)) ? "ProsuBeta" : "Prosu",
-    "setupExe": (Boolean(process.env.BETA)) ? "Prosu Beta Setup.exe" : "Prosu Setup.exe",
+    "setupExe": (Boolean(process.env.BETA)) ? "Prosu_Beta_Setup.exe" : "Prosu_Setup.exe",
     "releases": (Boolean(process.env.BETA)) ? "https://prosu-desktop-beta.now.sh" : "https://prosu-desktop-releases.now.sh",
     "loadingGif": path.join(__dirname, "icons/Installing-Animation.gif"),
     "setupIcon": path.join(__dirname, "icons/desktop_icon.ico"),
