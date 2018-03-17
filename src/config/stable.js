@@ -1,3 +1,3 @@
 module.exports = {
-  updateServer: "https://prosu-desktop-releases.now.sh"
+  updateServer: "https://prosu-desktop-stable.now.sh"
 }
