@@ -28,7 +28,7 @@ const loadingWindow = () => {
   });
 
   // and load the index.html of the app.
-  loadingWin.loadURL(`file://${__dirname}/index.html`);
+  loadingWin.loadURL(`file://${__dirname}/views/loading_screen.html`);
   loadingWin.webContents.on('did-finish-load', () => {
     loadingWin.show();
   });
