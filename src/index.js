@@ -6,7 +6,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 }
 app.on('ready', () =>{
   // First run, show "Thank You splashscreen"
-  if(process.argv[1] == "--squirrel-firstrun"){
+  if(process.argv.indexOf("--squirrel-firstrun") !== -1){
     startingSplash();
   // Show loader window
   }else{
@@ -27,14 +27,18 @@ const loadingWindow = () => {
     frame: false
   });
 
-  // and load the index.html of the app.
   loadingWin.loadURL(`file://${__dirname}/views/loading_screen.html`);
   loadingWin.webContents.on('did-finish-load', () => {
     loadingWin.show();
   });
+  if(!isDev){
+    loadingWin.webContents.on('will-navigate', (e) => {
+      e.preventDefault();
+    })
+  }
   loadingWin.once('show', () => {
     if(isDev){ // Don't check for updates if this is a development environment
-      loadingWin.webContents.executeJavaScript(`$(".status").text("Skipping update check while in development")`)
+      loadingWin.webContents.executeJavaScript(`$(".status").text("Skipping update check while in development...")`)
     }else{
       loadingWin.webContents.executeJavaScript(`$(".status").text("Checking for updates...")`)
       var updater = require("./util/updater");
@@ -46,10 +50,10 @@ const loadingWindow = () => {
         // Continue starting
       });
       updater.on('update-downloaded', (e, n, name) => {
-        loadingWin.webContents.executeJavaScript(`$(".status").text("Version ${name} downloaded. Installing in 3 seconds...")`);
+        loadingWin.webContents.executeJavaScript(`$(".status").text("Version ${name} downloaded. Installing in 2 seconds...")`);
         setTimeout(() => {
           updater.quitAndInstall();
-        }, 3000);
+        }, 2000);
       });
       updater.on('error', () => {
         loadingWin.webContents.executeJavaScript(`$(".status").text("An error occurred checking for updates")`)
@@ -74,6 +78,11 @@ const startingSplash = () => {
   splashWin.webContents.on('did-finish-load', () => {
     splashWin.show();
   });
+  if(!isDev){
+    splashWin.webContents.on('will-navigate', (e) => {
+      e.preventDefault();
+    })
+  }
   splashWin.on('close', () => {
     loadingWindow();
     splashWin.hide();
