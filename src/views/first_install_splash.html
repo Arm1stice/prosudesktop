@@ -1,47 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href='../assets/css/custom-fonts.css' rel='stylesheet'>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <style>
-      html, body{
-        font-family: Lato;
-        background-color: #F6A;
-        color: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-      }
-      .header{
-        text-align: center;
-        margin-top: 15px;
-        width: 100vw;
-        font-size: 40px;
-      }
-      .table {
-        width: 100vw;
-        height: 40vh;
-      }
-      .table > div {
-        width: 33vw;
-        display: inline-block;
-        text-align: center;
-      }
-    </style>
-    <title></title>
-  </head>
-  <body>
-    <div class='header'>
-      Thank you for installing Prosu!
+
+<head>
+  <meta charset="utf-8">
+  <link href='../assets/css/custom-fonts.css' rel='stylesheet'>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <style>
+    html,
+    body {
+      font-family: Lato;
+      background-color: #F6A;
+      color: white;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 15px;
+      width: 100vw;
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      width: 100vw;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .table {
+      width: 100vw;
+    }
+
+    .table>center>div {
+      width: 30vw;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .table>center>div:first-of-type {
+      margin-right: 5vw;
+    }
+
+    .table>center>div>span {
+      font-size: 15px;
+    }
+    .start_button{
+      margin-top: 30px;
+      display: inline-block;
+      border: 1px solid white;
+      padding: 7px;
+      cursor: pointer;
+    }
+    .start_button > span {
+      font-size: 2.2em;
+    }
+  </style>
+  <title></title>
+</head>
+
+<body>
+  <div class='header'>
+    Thank you for installing Prosu!
+  </div>
+  <div class='subtitle'>
+    Click below for more resources
+  </div>
+  <div class='table'>
+    <center>
+      <div onclick="require('electron').remote.shell.openExternal('https://github.com/Arm1stice/prosudesktop')">
+        <i class="fab fa-github fa-10x"></i><br>
+        Check out the source on GitHub
+      </div>
+      <div onclick="require('electron').remote.shell.openExternal('https://www.patreon.com/arm1stice')">
+        <i class="fab fa-patreon fa-10x"></i><br>
+        Support development on Patreon
+      </div>
+    </center>
+  </div>
+  <center>
+    <div class='start_button' onclick='window.close()'>
+      <span>Start Prosu</span>&nbsp;&nbsp;<i class="fas fa-angle-right fa-2x"></i>
     </div>
-    <div class='table'>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-    </div>
-    <button onclick="window.close()">Close</button>
-    <i class="fab fa-github"></i>
-    <br>
-  </body>
+  </center>
+  <!--<button onclick="window.close()">Close</button>-->
+  <br>
+</body>
+
 </html>
