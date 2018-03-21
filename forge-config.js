@@ -21,7 +21,7 @@ module.exports = {
     "description": "Backup your osu! beatmaps",
     "title": (Boolean(process.env.BETA)) ? "ProsuBeta" : "Prosu",
     "setupExe": (Boolean(process.env.BETA)) ? "Prosu_Beta_Setup.exe" : "Prosu_Setup.exe",
-    "releases": (Boolean(process.env.BETA)) ? `https://prosu-desktop-beta.now.sh/update/win32/${pc.version}/RELEASES` +  : "https://prosu-desktop-stable.now.sh/update/win32/${pc.version}/RELEASES",
+    "releases": (Boolean(process.env.BETA)) ? `https://prosu-desktop-beta.now.sh/update/win32/${pc.version}/RELEASES` : `https://prosu-desktop-stable.now.sh/update/win32/${pc.version}/RELEASES`,
     "loadingGif": path.join(__dirname, "icons/Installing-Animation.gif"),
     "setupIcon": path.join(__dirname, "icons/desktop_icon.ico"),
     "certificateFile": "./CodeSigning.pfx",
