@@ -2,8 +2,16 @@ import { app, BrowserWindow } from 'electron';
 var isDev = require("electron-is-dev")
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
-  app.quit();
+  return app.quit();
 }
+
+const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
+  // Open dialog
+});
+if (isSecondInstance) {
+  return app.quit()
+}
+
 app.on('ready', () =>{
   // First run, show "Thank You splashscreen"
   if(process.argv.indexOf("--squirrel-firstrun") !== -1){
